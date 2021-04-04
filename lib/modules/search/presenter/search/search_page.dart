@@ -35,7 +35,7 @@ class _SearchPageState extends State<SearchPage> {
           ),
           Expanded(
             child: StreamBuilder(
-                stream: bloc,
+                stream: bloc.stream,
                 builder: (context, snapshot) {
                   final state = bloc.state;
 
@@ -66,7 +66,7 @@ class _SearchPageState extends State<SearchPage> {
                           leading: item.img == null
                               ? Container()
                               : CircleAvatar(
-                                  backgroundImage: NetworkImage(item.img),
+                                  backgroundImage: NetworkImage(item.img ?? ""),
                                 ),
                         );
                       });

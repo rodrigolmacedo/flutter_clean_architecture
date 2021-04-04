@@ -4,7 +4,7 @@ import 'package:flutter_clean_architecture/modules/search/domain/errors/errors.d
 import 'package:flutter_clean_architecture/modules/search/domain/repositories/search_repository.dart';
 
 abstract class SearchByText {
-  Future<Either<FailureSearch, List<ResultSearch>>> call(String searchText);
+  Future<Either<FailureSearch, List<ResultSearch>>> call(String? searchText);
 }
 
 class SearchByTextImpl implements SearchByText {
@@ -14,7 +14,7 @@ class SearchByTextImpl implements SearchByText {
 
   @override
   Future<Either<FailureSearch, List<ResultSearch>>> call(
-      String searchText) async {
+      String? searchText) async {
     if (searchText == null || searchText.isEmpty)
       return Left(InvalidTextError());
 

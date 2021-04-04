@@ -10,7 +10,7 @@ class SearchSuccess implements SearchState {
 }
 
 class SearchError implements SearchState {
-  final FailureSearch error;
+  final FailureSearch? error;
 
   SearchError({this.error});
 }

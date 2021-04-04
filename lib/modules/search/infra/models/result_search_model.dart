@@ -3,11 +3,12 @@ import 'dart:convert';
 import 'package:flutter_clean_architecture/modules/search/domain/entities/result_search.dart';
 
 class ResultSearchModel extends ResultSearch {
-  final String img;
-  final String title;
-  final String content;
+  final String? img;
+  final String? title;
+  final String? content;
 
-  ResultSearchModel({this.img, this.title, this.content});
+  ResultSearchModel({this.img, this.title, this.content})
+      : super(img: img, content: content, title: title);
 
   Map<String, dynamic> toMap() {
     return {
@@ -21,7 +22,7 @@ class ResultSearchModel extends ResultSearch {
     return ResultSearchModel(
       img: map['avatar_url'],
       title: map['login'],
-      content: map['content'],
+      content: map['node_id'],
     );
   }
 
